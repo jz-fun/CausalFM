@@ -1,5 +1,15 @@
 # CausalFM
 
+## Experimental agentic RL pilot
+
+An active causal acquisition pilot now connects a categorical policy to the
+actual pretrained CausalFM encoder, with partial backbone fine-tuning,
+REINFORCE++-style updates, head-only and matched-trajectory supervised controls.
+See [the runnable guide](agentic_cate/README.md),
+[the English experiment note](docs/agentic_cate_experiment.tex), and
+[the recorded pilot](results/agentic_cate/pilot/summary.json).
+This is a small feasibility study, not an established performance improvement.
+
 
 ## 🚨 **New Release** 🚨  
 

@@ -1,0 +1,9 @@
+# Minimal optional dependencies for the active-CATE prototype.
+# Install a CPU or CUDA PyTorch wheel appropriate for your hardware first.
+torch>=2.5
+numpy>=1.24
+scipy>=1.10
+networkx>=3
+einops>=0.8
+typing_extensions>=4.8
+pytest>=8
