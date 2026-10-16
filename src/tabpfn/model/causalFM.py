@@ -386,6 +386,7 @@ class PerFeatureTransformerCATE(nn.Module):
         data_dags: list[Any] | None = None,
         categorical_inds: list[int] | None = None,
         half_layers: bool = False,
+        return_representations: bool = False,
     ) -> Any | dict[str, torch.Tensor]:
         """Core forward pass for CATE estimation
         
@@ -396,6 +397,8 @@ class PerFeatureTransformerCATE(nn.Module):
             single_eval_pos: Position to evaluate at
         Returns:
             Dictionary containing CATE distribution predictions and optionally other outputs
+            Set return_representations=True to include the differentiable
+            per-row hidden representation, before the prediction head.
         """
 
         if isinstance(x, dict):
@@ -617,6 +620,8 @@ class PerFeatureTransformerCATE(nn.Module):
        
        
         out = {}
+        if return_representations:
+            out["representations"] = cate_representation
        
         if gmm_out is not None:
             out.update(gmm_out)  # add gmm params if enabled

@@ -1,0 +1,17 @@
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Predictor / evaluation context & CATE MSE $\downarrow$\\
+\midrule
+Frozen / initial & $0.4473 \pm 0.0000$\\
+Frozen / random budget-2 & $0.4579 \pm 0.0000$\\
+Head-only RL / own policy & $0.4904 \pm 0.0224$\\
+Joint RL / own policy & $0.4874 \pm 0.0420$\\
+Frozen / joint policy contexts & $0.4925 \pm 0.0313$\\
+Matched SFT / joint policy contexts & $0.4737 \pm 0.0451$\\
+\bottomrule
+\end{tabular}\end{center}
+{\footnotesize Values are mean $\pm$ sample SD across three optimizer seeds on the same 64 tasks. Zero SD for a frozen baseline reflects identical repeated predictions, not zero task uncertainty.}
+\par\textbf{Observed outcome.} Joint RL did not improve on the frozen random-acquisition baseline, and matched SFT was better on the joint policy contexts. This pilot supports execution feasibility, not an RL-specific capability gain.
+Mean acquisitions were 1.932 for joint and 1.932 for head-only (random: 2). Policy-only encoder gradient norms ranged from 0.3891 to 0.4985. Training used 1,313--1,316 model forwards per joint run versus 560 for matched SFT; these counts exclude backward FLOPs.
+On initial contexts, joint MSE was 0.4365 versus matched SFT 0.4278; on the shared random contexts, 0.4535 versus 0.4429. These small differences are descriptive, without a task-level significance claim.

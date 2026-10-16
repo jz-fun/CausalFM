@@ -1,0 +1,2461 @@
+{
+  "status": "small_preliminary_cpu_pilot_not_efficacy_evidence",
+  "config": {
+    "checkpoint": "/workspace/scratch/9bb659318010/CausalFM/checkpoints_agentic/standard.pth",
+    "device": "cpu",
+    "mode": "joint",
+    "estimator": "reinforcepp_baseline",
+    "steps": 16,
+    "tasks_per_batch": 2,
+    "rollouts": 4,
+    "update_epochs": 2,
+    "trainable_layers": 1,
+    "layers": 10,
+    "n_initial": 16,
+    "n_pool": 8,
+    "n_query": 8,
+    "n_features": 3,
+    "budget": 2,
+    "cost": 0.005,
+    "lr": 0.0001,
+    "clip": 0.2,
+    "prediction_coef": 0.1,
+    "retention_coef": 0.1,
+    "entropy": 0.001,
+    "exploration": 0.02,
+    "threads": 1,
+    "seed": 2026,
+    "train_seed_start": 10000,
+    "eval_seed_start": 200000,
+    "eval_tasks": 64,
+    "output": "results/agentic_cate/pilot/joint_2026.json",
+    "replay_trajectories": null,
+    "checkpoint_sha256": "9b75ebf02016a61b3a6e8fc075f52f9c56189ea5d7e7633137a5c9b70f25774e",
+    "initialization": "pretrained_standard_causalfm",
+    "trainable_parameters": 289106,
+    "trainable_encoder_parameters": 262144
+  },
+  "runtime": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "device": "cpu",
+    "wall_seconds": 47.62287242399907
+  },
+  "gradient_check": {
+    "policy_to_encoder_norm": 0.38905635476112366,
+    "policy_to_head_norm": 1.0266250371932983
+  },
+  "changed_parameter_names": [
+    "backend.model.transformer_encoder.layers.9.self_attn_between_features._w_out",
+    "backend.model.transformer_encoder.layers.9.self_attn_between_features._w_qkv",
+    "backend.model.transformer_encoder.layers.9.self_attn_between_items._w_out",
+    "backend.model.transformer_encoder.layers.9.self_attn_between_items._w_qkv",
+    "backend.model.transformer_encoder.layers.9.mlp.linear1.weight",
+    "backend.model.transformer_encoder.layers.9.mlp.linear2.weight",
+    "backend.model.gmm_head.fc_pi.weight",
+    "backend.model.gmm_head.fc_pi.bias",
+    "backend.model.gmm_head.fc_mu.weight",
+    "backend.model.gmm_head.fc_mu.bias",
+    "backend.model.gmm_head.fc_sigma.weight",
+    "backend.model.gmm_head.fc_sigma.bias",
+    "action_head.0.weight",
+    "action_head.0.bias",
+    "action_head.2.weight",
+    "action_head.2.bias",
+    "stop_head.0.weight",
+    "stop_head.0.bias",
+    "stop_head.2.weight",
+    "stop_head.2.bias"
+  ],
+  "history": [
+    {
+      "step": 0,
+      "reward_mean": -0.005670470148324974,
+      "reward_std": 0.0799665168686525,
+      "policy_loss": -0.11669820547103882,
+      "prediction_loss": 0.7381937503814697,
+      "retention_loss": 0.009420672431588173,
+      "entropy": 2.7618465423583984,
+      "acquisitions_mean": 1.75,
+      "model_forward_calls": 80,
+      "encoder_grad_norm": 0.5038508772850037,
+      "head_grad_norm": 0.8266939520835876
+    },
+    {
+      "step": 1,
+      "reward_mean": 0.00770173352211714,
+      "reward_std": 0.04847865569316237,
+      "policy_loss": -0.0024140775203704834,
+      "prediction_loss": 0.813267707824707,
+      "retention_loss": 0.02364935539662838,
+      "entropy": 2.761493444442749,
+      "acquisitions_mean": 1.875,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.5163863301277161,
+      "head_grad_norm": 0.6039552688598633
+    },
+    {
+      "step": 2,
+      "reward_mean": -0.08428313419222833,
+      "reward_std": 0.1571813028621607,
+      "policy_loss": -0.009624272584915161,
+      "prediction_loss": 1.056179404258728,
+      "retention_loss": 0.021950893104076385,
+      "entropy": 2.762012481689453,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.5311837196350098,
+      "head_grad_norm": 0.8011749982833862
+    },
+    {
+      "step": 3,
+      "reward_mean": -0.0018754319101572,
+      "reward_std": 0.07048579502704426,
+      "policy_loss": 0.24030905961990356,
+      "prediction_loss": 0.7466427087783813,
+      "retention_loss": 0.01572887971997261,
+      "entropy": 2.774099111557007,
+      "acquisitions_mean": 1.5,
+      "model_forward_calls": 77,
+      "encoder_grad_norm": 0.5715456604957581,
+      "head_grad_norm": 0.7331573367118835
+    },
+    {
+      "step": 4,
+      "reward_mean": 0.057048590630292884,
+      "reward_std": 0.10802931070167526,
+      "policy_loss": -0.00391659140586853,
+      "prediction_loss": 0.5832739472389221,
+      "retention_loss": 0.04145509749650955,
+      "entropy": 2.750617742538452,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.396619975566864,
+      "head_grad_norm": 0.9020195007324219
+    },
+    {
+      "step": 5,
+      "reward_mean": -0.0470856523513794,
+      "reward_std": 0.08684270877621408,
+      "policy_loss": -0.005771279335021973,
+      "prediction_loss": 1.252514123916626,
+      "retention_loss": 0.019447488710284233,
+      "entropy": 2.749957323074341,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.6765362620353699,
+      "head_grad_norm": 0.6961153745651245
+    },
+    {
+      "step": 6,
+      "reward_mean": 0.17014306481927632,
+      "reward_std": 0.13686367787383655,
+      "policy_loss": -0.0031920969486236572,
+      "prediction_loss": 1.4176284074783325,
+      "retention_loss": 0.03479238972067833,
+      "entropy": 2.7532095909118652,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.5621050596237183,
+      "head_grad_norm": 0.6844403743743896
+    },
+    {
+      "step": 7,
+      "reward_mean": -0.07603001058101655,
+      "reward_std": 0.08523472372658308,
+      "policy_loss": -0.0012152493000030518,
+      "prediction_loss": 1.8448442220687866,
+      "retention_loss": 0.017784183844923973,
+      "entropy": 2.73647141456604,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.7550752758979797,
+      "head_grad_norm": 0.4794270992279053
+    },
+    {
+      "step": 8,
+      "reward_mean": 0.11062787919305264,
+      "reward_std": 0.11438962493378309,
+      "policy_loss": -0.070405974984169,
+      "prediction_loss": 0.7603467702865601,
+      "retention_loss": 0.012197224423289299,
+      "entropy": 2.7628228664398193,
+      "acquisitions_mean": 1.75,
+      "model_forward_calls": 80,
+      "encoder_grad_norm": 0.38427475094795227,
+      "head_grad_norm": 0.9092509746551514
+    },
+    {
+      "step": 9,
+      "reward_mean": 0.1700992339104414,
+      "reward_std": 0.18858331341267326,
+      "policy_loss": -0.2805923521518707,
+      "prediction_loss": 0.5937151312828064,
+      "retention_loss": 0.07656442373991013,
+      "entropy": 2.764761447906494,
+      "acquisitions_mean": 1.625,
+      "model_forward_calls": 80,
+      "encoder_grad_norm": 0.6322299242019653,
+      "head_grad_norm": 0.7397552728652954
+    },
+    {
+      "step": 10,
+      "reward_mean": 0.027338381633162497,
+      "reward_std": 0.12758505936088593,
+      "policy_loss": -0.00017911195755004883,
+      "prediction_loss": 0.615707278251648,
+      "retention_loss": 0.004407298751175404,
+      "entropy": 2.7571237087249756,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.47278982400894165,
+      "head_grad_norm": 0.8445027470588684
+    },
+    {
+      "step": 11,
+      "reward_mean": 0.2056986780464649,
+      "reward_std": 0.17460628975995107,
+      "policy_loss": -0.004757881164550781,
+      "prediction_loss": 1.242807388305664,
+      "retention_loss": 0.012324298731982708,
+      "entropy": 2.7611114978790283,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.44268158078193665,
+      "head_grad_norm": 0.8921405673027039
+    },
+    {
+      "step": 12,
+      "reward_mean": 0.09648901760578155,
+      "reward_std": 0.3256646514894665,
+      "policy_loss": 0.0004101693630218506,
+      "prediction_loss": 1.9950286149978638,
+      "retention_loss": 0.007596131414175034,
+      "entropy": 2.7638978958129883,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.5095593929290771,
+      "head_grad_norm": 0.8160035610198975
+    },
+    {
+      "step": 13,
+      "reward_mean": -0.031567881675437094,
+      "reward_std": 0.11391885842693594,
+      "policy_loss": -0.0029061436653137207,
+      "prediction_loss": 0.6769841909408569,
+      "retention_loss": 0.15570245683193207,
+      "entropy": 2.765679359436035,
+      "acquisitions_mean": 1.875,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.7068989872932434,
+      "head_grad_norm": 0.606203019618988
+    },
+    {
+      "step": 14,
+      "reward_mean": -0.004697397910058493,
+      "reward_std": 0.06053065061033127,
+      "policy_loss": -0.005046963691711426,
+      "prediction_loss": 0.5792722105979919,
+      "retention_loss": 0.026021543890237808,
+      "entropy": 2.765817403793335,
+      "acquisitions_mean": 1.875,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.4364844560623169,
+      "head_grad_norm": 0.8842922449111938
+    },
+    {
+      "step": 15,
+      "reward_mean": -0.06629268335178495,
+      "reward_std": 0.10086100126336138,
+      "policy_loss": -0.007574647665023804,
+      "prediction_loss": 0.5728679299354553,
+      "retention_loss": 0.009667946957051754,
+      "entropy": 2.7659215927124023,
+      "acquisitions_mean": 2.0,
+      "model_forward_calls": 83,
+      "encoder_grad_norm": 0.38218602538108826,
+      "head_grad_norm": 0.9059550762176514
+    }
+  ],
+  "training_trajectories": [
+    [
+      {
+        "task_seed": 10000,
+        "actions": [
+          1,
+          4
+        ],
+        "acquired": 2,
+        "reward": -0.031327078342437746
+      },
+      {
+        "task_seed": 10000,
+        "actions": [
+          11,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.13097102403640748
+      },
+      {
+        "task_seed": 10000,
+        "actions": [
+          3,
+          4
+        ],
+        "acquired": 2,
+        "reward": -0.05591447114944458
+      },
+      {
+        "task_seed": 10000,
+        "actions": [
+          8,
+          7
+        ],
+        "acquired": 2,
+        "reward": -0.017000625133514406
+      },
+      {
+        "task_seed": 10001,
+        "actions": [
+          12,
+          4
+        ],
+        "acquired": 2,
+        "reward": 0.020398249626159666
+      },
+      {
+        "task_seed": 10001,
+        "actions": [
+          4,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.0021398162841796877
+      },
+      {
+        "task_seed": 10001,
+        "actions": [
+          16
+        ],
+        "acquired": 0,
+        "reward": 0.0
+      },
+      {
+        "task_seed": 10001,
+        "actions": [
+          12,
+          11
+        ],
+        "acquired": 2,
+        "reward": 0.17159100413322448
+      }
+    ],
+    [
+      {
+        "task_seed": 10002,
+        "actions": [
+          0,
+          16
+        ],
+        "acquired": 1,
+        "reward": -0.03807940810918808
+      },
+      {
+        "task_seed": 10002,
+        "actions": [
+          1,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.0415588191151619
+      },
+      {
+        "task_seed": 10002,
+        "actions": [
+          10,
+          8
+        ],
+        "acquired": 2,
+        "reward": -0.014994034767150879
+      },
+      {
+        "task_seed": 10002,
+        "actions": [
+          9,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.04436482697725296
+      },
+      {
+        "task_seed": 10003,
+        "actions": [
+          2,
+          6
+        ],
+        "acquired": 2,
+        "reward": 0.016250809431076048
+      },
+      {
+        "task_seed": 10003,
+        "actions": [
+          10,
+          1
+        ],
+        "acquired": 2,
+        "reward": 0.024112125635147093
+      },
+      {
+        "task_seed": 10003,
+        "actions": [
+          8,
+          0
+        ],
+        "acquired": 2,
+        "reward": 0.09062497854232789
+      },
+      {
+        "task_seed": 10003,
+        "actions": [
+          7,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.0696230435371399
+      }
+    ],
+    [
+      {
+        "task_seed": 10004,
+        "actions": [
+          0,
+          9
+        ],
+        "acquired": 2,
+        "reward": -0.01655627250671387
+      },
+      {
+        "task_seed": 10004,
+        "actions": [
+          0,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.02904926776885986
+      },
+      {
+        "task_seed": 10004,
+        "actions": [
+          0,
+          14
+        ],
+        "acquired": 2,
+        "reward": 0.011567672491073608
+      },
+      {
+        "task_seed": 10004,
+        "actions": [
+          4,
+          13
+        ],
+        "acquired": 2,
+        "reward": -0.07725606322288513
+      },
+      {
+        "task_seed": 10005,
+        "actions": [
+          9,
+          6
+        ],
+        "acquired": 2,
+        "reward": 0.013628324270248413
+      },
+      {
+        "task_seed": 10005,
+        "actions": [
+          0,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.339289048910141
+      },
+      {
+        "task_seed": 10005,
+        "actions": [
+          6,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.06243901491165161
+      },
+      {
+        "task_seed": 10005,
+        "actions": [
+          1,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.35784796833992005
+      }
+    ],
+    [
+      {
+        "task_seed": 10006,
+        "actions": [
+          0,
+          3
+        ],
+        "acquired": 2,
+        "reward": 0.0956341826915741
+      },
+      {
+        "task_seed": 10006,
+        "actions": [
+          10,
+          14
+        ],
+        "acquired": 2,
+        "reward": 0.012987514734268188
+      },
+      {
+        "task_seed": 10006,
+        "actions": [
+          0,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.06068970799446106
+      },
+      {
+        "task_seed": 10006,
+        "actions": [
+          16
+        ],
+        "acquired": 0,
+        "reward": 0.06417544186115265
+      },
+      {
+        "task_seed": 10007,
+        "actions": [
+          7,
+          10
+        ],
+        "acquired": 2,
+        "reward": -0.08797814160585403
+      },
+      {
+        "task_seed": 10007,
+        "actions": [
+          13,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.0555244854092598
+      },
+      {
+        "task_seed": 10007,
+        "actions": [
+          16
+        ],
+        "acquired": 0,
+        "reward": 0.003735549747943878
+      },
+      {
+        "task_seed": 10007,
+        "actions": [
+          13,
+          2
+        ],
+        "acquired": 2,
+        "reward": -0.10872322529554367
+      }
+    ],
+    [
+      {
+        "task_seed": 10008,
+        "actions": [
+          3,
+          1
+        ],
+        "acquired": 2,
+        "reward": -0.04588337078690529
+      },
+      {
+        "task_seed": 10008,
+        "actions": [
+          10,
+          7
+        ],
+        "acquired": 2,
+        "reward": 0.012012874484062195
+      },
+      {
+        "task_seed": 10008,
+        "actions": [
+          2,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.03619590982794762
+      },
+      {
+        "task_seed": 10008,
+        "actions": [
+          13,
+          6
+        ],
+        "acquired": 2,
+        "reward": -0.01079779326915741
+      },
+      {
+        "task_seed": 10009,
+        "actions": [
+          15,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.06274061441421509
+      },
+      {
+        "task_seed": 10009,
+        "actions": [
+          1,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.18374272227287292
+      },
+      {
+        "task_seed": 10009,
+        "actions": [
+          12,
+          3
+        ],
+        "acquired": 2,
+        "reward": 0.27908485174179076
+      },
+      {
+        "task_seed": 10009,
+        "actions": [
+          5,
+          6
+        ],
+        "acquired": 2,
+        "reward": 0.011684736013412475
+      }
+    ],
+    [
+      {
+        "task_seed": 10010,
+        "actions": [
+          0,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.004692142605781555
+      },
+      {
+        "task_seed": 10010,
+        "actions": [
+          14,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.0018501782417297361
+      },
+      {
+        "task_seed": 10010,
+        "actions": [
+          3,
+          11
+        ],
+        "acquired": 2,
+        "reward": -0.12530116200447083
+      },
+      {
+        "task_seed": 10010,
+        "actions": [
+          12,
+          9
+        ],
+        "acquired": 2,
+        "reward": 0.012833481431007385
+      },
+      {
+        "task_seed": 10011,
+        "actions": [
+          2,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.01928960740566254
+      },
+      {
+        "task_seed": 10011,
+        "actions": [
+          8,
+          1
+        ],
+        "acquired": 2,
+        "reward": -0.2171203738451004
+      },
+      {
+        "task_seed": 10011,
+        "actions": [
+          11,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.10106741845607757
+      },
+      {
+        "task_seed": 10011,
+        "actions": [
+          7,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.06671754062175751
+      }
+    ],
+    [
+      {
+        "task_seed": 10012,
+        "actions": [
+          14,
+          6
+        ],
+        "acquired": 2,
+        "reward": 0.002148022651672363
+      },
+      {
+        "task_seed": 10012,
+        "actions": [
+          2,
+          4
+        ],
+        "acquired": 2,
+        "reward": 0.381432523727417
+      },
+      {
+        "task_seed": 10012,
+        "actions": [
+          6,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.10874461174011231
+      },
+      {
+        "task_seed": 10012,
+        "actions": [
+          10,
+          4
+        ],
+        "acquired": 2,
+        "reward": 0.41157673835754394
+      },
+      {
+        "task_seed": 10013,
+        "actions": [
+          10,
+          14
+        ],
+        "acquired": 2,
+        "reward": 0.1453089991211891
+      },
+      {
+        "task_seed": 10013,
+        "actions": [
+          14,
+          5
+        ],
+        "acquired": 2,
+        "reward": 0.1195834630727768
+      },
+      {
+        "task_seed": 10013,
+        "actions": [
+          5,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.1163275295495987
+      },
+      {
+        "task_seed": 10013,
+        "actions": [
+          14,
+          12
+        ],
+        "acquired": 2,
+        "reward": 0.07602263033390046
+      }
+    ],
+    [
+      {
+        "task_seed": 10014,
+        "actions": [
+          6,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.1012068486213684
+      },
+      {
+        "task_seed": 10014,
+        "actions": [
+          7,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.19349945545196534
+      },
+      {
+        "task_seed": 10014,
+        "actions": [
+          6,
+          0
+        ],
+        "acquired": 2,
+        "reward": -0.06861341953277587
+      },
+      {
+        "task_seed": 10014,
+        "actions": [
+          10,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.06576294660568237
+      },
+      {
+        "task_seed": 10015,
+        "actions": [
+          4,
+          8
+        ],
+        "acquired": 2,
+        "reward": -0.058450350761413576
+      },
+      {
+        "task_seed": 10015,
+        "actions": [
+          0,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.06087844610214233
+      },
+      {
+        "task_seed": 10015,
+        "actions": [
+          14,
+          8
+        ],
+        "acquired": 2,
+        "reward": -0.2004227137565613
+      },
+      {
+        "task_seed": 10015,
+        "actions": [
+          5,
+          6
+        ],
+        "acquired": 2,
+        "reward": 0.018837203979492186
+      }
+    ],
+    [
+      {
+        "task_seed": 10016,
+        "actions": [
+          7,
+          3
+        ],
+        "acquired": 2,
+        "reward": 0.2613263779878616
+      },
+      {
+        "task_seed": 10016,
+        "actions": [
+          4,
+          12
+        ],
+        "acquired": 2,
+        "reward": -0.10166476130485534
+      },
+      {
+        "task_seed": 10016,
+        "actions": [
+          2,
+          11
+        ],
+        "acquired": 2,
+        "reward": 0.23123497307300567
+      },
+      {
+        "task_seed": 10016,
+        "actions": [
+          15,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.009465923309326172
+      },
+      {
+        "task_seed": 10017,
+        "actions": [
+          10,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.09312345623970032
+      },
+      {
+        "task_seed": 10017,
+        "actions": [
+          1,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.12363620638847352
+      },
+      {
+        "task_seed": 10017,
+        "actions": [
+          16
+        ],
+        "acquired": 0,
+        "reward": 0.06129242479801178
+      },
+      {
+        "task_seed": 10017,
+        "actions": [
+          9,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.20660843305289744
+      }
+    ],
+    [
+      {
+        "task_seed": 10018,
+        "actions": [
+          1,
+          16
+        ],
+        "acquired": 1,
+        "reward": 0.46884023666381835
+      },
+      {
+        "task_seed": 10018,
+        "actions": [
+          10,
+          1
+        ],
+        "acquired": 2,
+        "reward": 0.45744367480278014
+      },
+      {
+        "task_seed": 10018,
+        "actions": [
+          16
+        ],
+        "acquired": 0,
+        "reward": 0.04864531755447388
+      },
+      {
+        "task_seed": 10018,
+        "actions": [
+          7,
+          4
+        ],
+        "acquired": 2,
+        "reward": 0.2826342189311981
+      },
+      {
+        "task_seed": 10019,
+        "actions": [
+          14,
+          1
+        ],
+        "acquired": 2,
+        "reward": 0.021112536787986753
+      },
+      {
+        "task_seed": 10019,
+        "actions": [
+          5,
+          11
+        ],
+        "acquired": 2,
+        "reward": 0.04283171683549881
+      },
+      {
+        "task_seed": 10019,
+        "actions": [
+          8,
+          0
+        ],
+        "acquired": 2,
+        "reward": -0.008755641281604767
+      },
+      {
+        "task_seed": 10019,
+        "actions": [
+          4,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.04804181098937988
+      }
+    ],
+    [
+      {
+        "task_seed": 10020,
+        "actions": [
+          10,
+          5
+        ],
+        "acquired": 2,
+        "reward": -0.08252231985330581
+      },
+      {
+        "task_seed": 10020,
+        "actions": [
+          8,
+          12
+        ],
+        "acquired": 2,
+        "reward": -0.08502206414937973
+      },
+      {
+        "task_seed": 10020,
+        "actions": [
+          10,
+          12
+        ],
+        "acquired": 2,
+        "reward": -0.11365691035985946
+      },
+      {
+        "task_seed": 10020,
+        "actions": [
+          10,
+          3
+        ],
+        "acquired": 2,
+        "reward": -0.09260988444089889
+      },
+      {
+        "task_seed": 10021,
+        "actions": [
+          5,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.15967540979385375
+      },
+      {
+        "task_seed": 10021,
+        "actions": [
+          13,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.16591065168380736
+      },
+      {
+        "task_seed": 10021,
+        "actions": [
+          0,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.21099199891090392
+      },
+      {
+        "task_seed": 10021,
+        "actions": [
+          7,
+          11
+        ],
+        "acquired": 2,
+        "reward": 0.05594017148017883
+      }
+    ],
+    [
+      {
+        "task_seed": 10022,
+        "actions": [
+          14,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.1660873794555664
+      },
+      {
+        "task_seed": 10022,
+        "actions": [
+          13,
+          4
+        ],
+        "acquired": 2,
+        "reward": 0.27880396485328673
+      },
+      {
+        "task_seed": 10022,
+        "actions": [
+          12,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.15576886177062987
+      },
+      {
+        "task_seed": 10022,
+        "actions": [
+          2,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.15602396965026855
+      },
+      {
+        "task_seed": 10023,
+        "actions": [
+          1,
+          5
+        ],
+        "acquired": 2,
+        "reward": 0.4541486406326294
+      },
+      {
+        "task_seed": 10023,
+        "actions": [
+          12,
+          5
+        ],
+        "acquired": 2,
+        "reward": 0.4552610421180725
+      },
+      {
+        "task_seed": 10023,
+        "actions": [
+          2,
+          12
+        ],
+        "acquired": 2,
+        "reward": 0.07561545610427857
+      },
+      {
+        "task_seed": 10023,
+        "actions": [
+          11,
+          4
+        ],
+        "acquired": 2,
+        "reward": -0.09611989021301269
+      }
+    ],
+    [
+      {
+        "task_seed": 10024,
+        "actions": [
+          4,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.12150757551193238
+      },
+      {
+        "task_seed": 10024,
+        "actions": [
+          7,
+          13
+        ],
+        "acquired": 2,
+        "reward": -0.0752434229850769
+      },
+      {
+        "task_seed": 10024,
+        "actions": [
+          6,
+          14
+        ],
+        "acquired": 2,
+        "reward": 0.1277144455909729
+      },
+      {
+        "task_seed": 10024,
+        "actions": [
+          15,
+          3
+        ],
+        "acquired": 2,
+        "reward": -0.009090969562530518
+      },
+      {
+        "task_seed": 10025,
+        "actions": [
+          10,
+          9
+        ],
+        "acquired": 2,
+        "reward": -0.4944764471054077
+      },
+      {
+        "task_seed": 10025,
+        "actions": [
+          7,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.5140352749824524
+      },
+      {
+        "task_seed": 10025,
+        "actions": [
+          8,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.6137518191337585
+      },
+      {
+        "task_seed": 10025,
+        "actions": [
+          11,
+          1
+        ],
+        "acquired": 2,
+        "reward": -0.026286134719848635
+      }
+    ],
+    [
+      {
+        "task_seed": 10026,
+        "actions": [
+          2,
+          16
+        ],
+        "acquired": 1,
+        "reward": 0.04368345707654953
+      },
+      {
+        "task_seed": 10026,
+        "actions": [
+          13,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.020677747428417208
+      },
+      {
+        "task_seed": 10026,
+        "actions": [
+          15,
+          12
+        ],
+        "acquired": 2,
+        "reward": 0.06818946056067944
+      },
+      {
+        "task_seed": 10026,
+        "actions": [
+          13,
+          8
+        ],
+        "acquired": 2,
+        "reward": 0.020502818524837492
+      },
+      {
+        "task_seed": 10027,
+        "actions": [
+          10,
+          9
+        ],
+        "acquired": 2,
+        "reward": 0.06177811861038208
+      },
+      {
+        "task_seed": 10027,
+        "actions": [
+          0,
+          5
+        ],
+        "acquired": 2,
+        "reward": -0.2936512625217438
+      },
+      {
+        "task_seed": 10027,
+        "actions": [
+          15,
+          2
+        ],
+        "acquired": 2,
+        "reward": -0.013372550010681153
+      },
+      {
+        "task_seed": 10027,
+        "actions": [
+          8,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.11899534821510314
+      }
+    ],
+    [
+      {
+        "task_seed": 10028,
+        "actions": [
+          14,
+          2
+        ],
+        "acquired": 2,
+        "reward": -0.051360251605510714
+      },
+      {
+        "task_seed": 10028,
+        "actions": [
+          0,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.00812002807855606
+      },
+      {
+        "task_seed": 10028,
+        "actions": [
+          10,
+          9
+        ],
+        "acquired": 2,
+        "reward": -0.0812311491370201
+      },
+      {
+        "task_seed": 10028,
+        "actions": [
+          3,
+          12
+        ],
+        "acquired": 2,
+        "reward": -0.04112436830997467
+      },
+      {
+        "task_seed": 10029,
+        "actions": [
+          10,
+          15
+        ],
+        "acquired": 2,
+        "reward": 0.03391682147979736
+      },
+      {
+        "task_seed": 10029,
+        "actions": [
+          5,
+          0
+        ],
+        "acquired": 2,
+        "reward": -0.06013149976730347
+      },
+      {
+        "task_seed": 10029,
+        "actions": [
+          15,
+          16
+        ],
+        "acquired": 1,
+        "reward": 0.04682623863220215
+      },
+      {
+        "task_seed": 10029,
+        "actions": [
+          3,
+          1
+        ],
+        "acquired": 2,
+        "reward": 0.1074049973487854
+      }
+    ],
+    [
+      {
+        "task_seed": 10030,
+        "actions": [
+          14,
+          10
+        ],
+        "acquired": 2,
+        "reward": 0.018930895030498503
+      },
+      {
+        "task_seed": 10030,
+        "actions": [
+          2,
+          12
+        ],
+        "acquired": 2,
+        "reward": -0.2641435807943344
+      },
+      {
+        "task_seed": 10030,
+        "actions": [
+          6,
+          15
+        ],
+        "acquired": 2,
+        "reward": -0.009799452722072602
+      },
+      {
+        "task_seed": 10030,
+        "actions": [
+          8,
+          5
+        ],
+        "acquired": 2,
+        "reward": -0.16153726935386659
+      },
+      {
+        "task_seed": 10031,
+        "actions": [
+          13,
+          2
+        ],
+        "acquired": 2,
+        "reward": 0.014163447320461273
+      },
+      {
+        "task_seed": 10031,
+        "actions": [
+          2,
+          14
+        ],
+        "acquired": 2,
+        "reward": -0.13310172617435456
+      },
+      {
+        "task_seed": 10031,
+        "actions": [
+          11,
+          13
+        ],
+        "acquired": 2,
+        "reward": 0.0364172251522541
+      },
+      {
+        "task_seed": 10031,
+        "actions": [
+          2,
+          10
+        ],
+        "acquired": 2,
+        "reward": -0.0312710052728653
+      }
+    ]
+  ],
+  "evaluation": {
+    "summary": {
+      "initial_reference_mse": {
+        "mean": 0.44734552726731636,
+        "std": 0.5255885123313403
+      },
+      "initial_posttrained_mse": {
+        "mean": 0.4531393824145198,
+        "std": 0.5284395238839972
+      },
+      "random_reference_mse": {
+        "mean": 0.4578732451336691,
+        "std": 0.5984501224646722
+      },
+      "random_posttrained_mse": {
+        "mean": 0.47595395549433306,
+        "std": 0.578156290522847
+      },
+      "learned_reference_mse": {
+        "mean": 0.5138185393298045,
+        "std": 0.6024626865424935
+      },
+      "learned_posttrained_mse": {
+        "mean": 0.5336308066907804,
+        "std": 0.5944287892577486
+      },
+      "learned_acquisitions": {
+        "mean": 1.9375,
+        "std": 0.3021089890583219
+      },
+      "random_acquisitions": {
+        "mean": 2.0,
+        "std": 0.0
+      }
+    },
+    "tasks": [
+      {
+        "seed": 200000,
+        "initial_reference_mse": 0.06715476512908936,
+        "initial_posttrained_mse": 0.06012819707393646,
+        "random_reference_mse": 0.03542664274573326,
+        "random_posttrained_mse": 0.03804594650864601,
+        "learned_reference_mse": 0.08349774777889252,
+        "learned_posttrained_mse": 0.0757346898317337,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          15,
+          11
+        ]
+      },
+      {
+        "seed": 200001,
+        "initial_reference_mse": 0.1723485291004181,
+        "initial_posttrained_mse": 0.21407923102378845,
+        "random_reference_mse": 0.5467756390571594,
+        "random_posttrained_mse": 0.3186200261116028,
+        "learned_reference_mse": 0.5456505417823792,
+        "learned_posttrained_mse": 0.5003757476806641,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          13,
+          8
+        ]
+      },
+      {
+        "seed": 200002,
+        "initial_reference_mse": 0.6197062730789185,
+        "initial_posttrained_mse": 0.46614617109298706,
+        "random_reference_mse": 0.5105196833610535,
+        "random_posttrained_mse": 0.3409264087677002,
+        "learned_reference_mse": 0.5298364758491516,
+        "learned_posttrained_mse": 0.42195069789886475,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          0,
+          9
+        ]
+      },
+      {
+        "seed": 200003,
+        "initial_reference_mse": 0.021859345957636833,
+        "initial_posttrained_mse": 0.017575986683368683,
+        "random_reference_mse": 0.015142117626965046,
+        "random_posttrained_mse": 0.03536278381943703,
+        "learned_reference_mse": 0.14885711669921875,
+        "learned_posttrained_mse": 0.1147753968834877,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          8,
+          0
+        ]
+      },
+      {
+        "seed": 200004,
+        "initial_reference_mse": 0.08731694519519806,
+        "initial_posttrained_mse": 0.05478356406092644,
+        "random_reference_mse": 0.02897845208644867,
+        "random_posttrained_mse": 0.12055861204862595,
+        "learned_reference_mse": 0.0736125037074089,
+        "learned_posttrained_mse": 0.07386362552642822,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          11,
+          12
+        ]
+      },
+      {
+        "seed": 200005,
+        "initial_reference_mse": 0.36382296681404114,
+        "initial_posttrained_mse": 0.38841044902801514,
+        "random_reference_mse": 0.3233426809310913,
+        "random_posttrained_mse": 0.46977734565734863,
+        "learned_reference_mse": 0.37294015288352966,
+        "learned_posttrained_mse": 0.4887040853500366,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          8
+        ]
+      },
+      {
+        "seed": 200006,
+        "initial_reference_mse": 0.10645030438899994,
+        "initial_posttrained_mse": 0.125772163271904,
+        "random_reference_mse": 0.09983348101377487,
+        "random_posttrained_mse": 0.08273840695619583,
+        "learned_reference_mse": 0.0514148473739624,
+        "learned_posttrained_mse": 0.08045599609613419,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          13,
+          14
+        ]
+      },
+      {
+        "seed": 200007,
+        "initial_reference_mse": 0.24078166484832764,
+        "initial_posttrained_mse": 0.2588084936141968,
+        "random_reference_mse": 0.32218074798583984,
+        "random_posttrained_mse": 0.36547335982322693,
+        "learned_reference_mse": 0.0943051278591156,
+        "learned_posttrained_mse": 0.09274214506149292,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          7,
+          9
+        ]
+      },
+      {
+        "seed": 200008,
+        "initial_reference_mse": 0.6597465872764587,
+        "initial_posttrained_mse": 0.8526704907417297,
+        "random_reference_mse": 0.36620306968688965,
+        "random_posttrained_mse": 0.5511770844459534,
+        "learned_reference_mse": 1.133664846420288,
+        "learned_posttrained_mse": 1.361143708229065,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          10,
+          2
+        ]
+      },
+      {
+        "seed": 200009,
+        "initial_reference_mse": 0.016343995928764343,
+        "initial_posttrained_mse": 0.047317713499069214,
+        "random_reference_mse": 0.042566511780023575,
+        "random_posttrained_mse": 0.04557986930012703,
+        "learned_reference_mse": 0.03340344876050949,
+        "learned_posttrained_mse": 0.07988302409648895,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          9,
+          2
+        ]
+      },
+      {
+        "seed": 200010,
+        "initial_reference_mse": 0.6655716896057129,
+        "initial_posttrained_mse": 0.6009406447410583,
+        "random_reference_mse": 0.6482434272766113,
+        "random_posttrained_mse": 0.7039271593093872,
+        "learned_reference_mse": 0.5020270347595215,
+        "learned_posttrained_mse": 0.5555144548416138,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          8,
+          12
+        ]
+      },
+      {
+        "seed": 200011,
+        "initial_reference_mse": 1.0270735025405884,
+        "initial_posttrained_mse": 1.4664666652679443,
+        "random_reference_mse": 0.865149974822998,
+        "random_posttrained_mse": 1.3516637086868286,
+        "learned_reference_mse": 0.8585907220840454,
+        "learned_posttrained_mse": 1.3536715507507324,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          1,
+          10
+        ]
+      },
+      {
+        "seed": 200012,
+        "initial_reference_mse": 0.713770866394043,
+        "initial_posttrained_mse": 0.6640217304229736,
+        "random_reference_mse": 0.806632399559021,
+        "random_posttrained_mse": 0.8375720977783203,
+        "learned_reference_mse": 0.602034330368042,
+        "learned_posttrained_mse": 0.615831196308136,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          8,
+          4
+        ]
+      },
+      {
+        "seed": 200013,
+        "initial_reference_mse": 0.2790530323982239,
+        "initial_posttrained_mse": 0.38558077812194824,
+        "random_reference_mse": 0.21790479123592377,
+        "random_posttrained_mse": 0.4252731204032898,
+        "learned_reference_mse": 0.3990297317504883,
+        "learned_posttrained_mse": 0.5777414441108704,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          0,
+          8
+        ]
+      },
+      {
+        "seed": 200014,
+        "initial_reference_mse": 0.29336977005004883,
+        "initial_posttrained_mse": 0.2542419135570526,
+        "random_reference_mse": 0.30189093947410583,
+        "random_posttrained_mse": 0.38697245717048645,
+        "learned_reference_mse": 0.34881532192230225,
+        "learned_posttrained_mse": 0.45999953150749207,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          15,
+          12
+        ]
+      },
+      {
+        "seed": 200015,
+        "initial_reference_mse": 0.11833451688289642,
+        "initial_posttrained_mse": 0.04721004515886307,
+        "random_reference_mse": 0.15026211738586426,
+        "random_posttrained_mse": 0.2238679677248001,
+        "learned_reference_mse": 0.16145718097686768,
+        "learned_posttrained_mse": 0.04372572898864746,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          10,
+          14
+        ]
+      },
+      {
+        "seed": 200016,
+        "initial_reference_mse": 1.0240793228149414,
+        "initial_posttrained_mse": 0.7366044521331787,
+        "random_reference_mse": 0.7297177314758301,
+        "random_posttrained_mse": 0.6539122462272644,
+        "learned_reference_mse": 0.9123678207397461,
+        "learned_posttrained_mse": 0.7371535301208496,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          8
+        ]
+      },
+      {
+        "seed": 200017,
+        "initial_reference_mse": 3.248229503631592,
+        "initial_posttrained_mse": 3.3901093006134033,
+        "random_reference_mse": 2.9210517406463623,
+        "random_posttrained_mse": 2.946917772293091,
+        "learned_reference_mse": 2.8708767890930176,
+        "learned_posttrained_mse": 2.872830867767334,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          9,
+          1
+        ]
+      },
+      {
+        "seed": 200018,
+        "initial_reference_mse": 0.9229997396469116,
+        "initial_posttrained_mse": 0.7142134308815002,
+        "random_reference_mse": 0.770270586013794,
+        "random_posttrained_mse": 0.6791379451751709,
+        "learned_reference_mse": 0.935754656791687,
+        "learned_posttrained_mse": 0.7947641015052795,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          7,
+          13
+        ]
+      },
+      {
+        "seed": 200019,
+        "initial_reference_mse": 0.4037627577781677,
+        "initial_posttrained_mse": 0.3253348469734192,
+        "random_reference_mse": 0.43365177512168884,
+        "random_posttrained_mse": 0.36704179644584656,
+        "learned_reference_mse": 0.5941916108131409,
+        "learned_posttrained_mse": 0.462922066450119,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          5,
+          0
+        ]
+      },
+      {
+        "seed": 200020,
+        "initial_reference_mse": 1.0910741090774536,
+        "initial_posttrained_mse": 1.2034695148468018,
+        "random_reference_mse": 0.45822951197624207,
+        "random_posttrained_mse": 0.367278128862381,
+        "learned_reference_mse": 1.1585280895233154,
+        "learned_posttrained_mse": 1.290785551071167,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          10,
+          14
+        ]
+      },
+      {
+        "seed": 200021,
+        "initial_reference_mse": 0.7132576704025269,
+        "initial_posttrained_mse": 1.1206145286560059,
+        "random_reference_mse": 0.66642826795578,
+        "random_posttrained_mse": 1.0836715698242188,
+        "learned_reference_mse": 1.8349567651748657,
+        "learned_posttrained_mse": 2.3103816509246826,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          1,
+          7
+        ]
+      },
+      {
+        "seed": 200022,
+        "initial_reference_mse": 0.21682104468345642,
+        "initial_posttrained_mse": 0.35294413566589355,
+        "random_reference_mse": 0.07075361162424088,
+        "random_posttrained_mse": 0.10517583042383194,
+        "learned_reference_mse": 0.21682104468345642,
+        "learned_posttrained_mse": 0.35294413566589355,
+        "learned_acquisitions": 0,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          16
+        ]
+      },
+      {
+        "seed": 200023,
+        "initial_reference_mse": 0.18951141834259033,
+        "initial_posttrained_mse": 0.17729616165161133,
+        "random_reference_mse": 0.23005375266075134,
+        "random_posttrained_mse": 0.21381066739559174,
+        "learned_reference_mse": 0.32715123891830444,
+        "learned_posttrained_mse": 0.3044532239437103,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          3,
+          5
+        ]
+      },
+      {
+        "seed": 200024,
+        "initial_reference_mse": 0.428419828414917,
+        "initial_posttrained_mse": 0.4781777858734131,
+        "random_reference_mse": 0.5368398427963257,
+        "random_posttrained_mse": 0.4357766807079315,
+        "learned_reference_mse": 0.4238241910934448,
+        "learned_posttrained_mse": 0.4495289921760559,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          11,
+          14
+        ]
+      },
+      {
+        "seed": 200025,
+        "initial_reference_mse": 0.1649128645658493,
+        "initial_posttrained_mse": 0.3191711902618408,
+        "random_reference_mse": 0.4830707609653473,
+        "random_posttrained_mse": 0.7083593606948853,
+        "learned_reference_mse": 0.21020248532295227,
+        "learned_posttrained_mse": 0.4144803583621979,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          3,
+          10
+        ]
+      },
+      {
+        "seed": 200026,
+        "initial_reference_mse": 0.20466013252735138,
+        "initial_posttrained_mse": 0.13268454372882843,
+        "random_reference_mse": 0.19037464261054993,
+        "random_posttrained_mse": 0.17315156757831573,
+        "learned_reference_mse": 0.11106778681278229,
+        "learned_posttrained_mse": 0.09095188230276108,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          3,
+          13
+        ]
+      },
+      {
+        "seed": 200027,
+        "initial_reference_mse": 2.59211802482605,
+        "initial_posttrained_mse": 2.1155734062194824,
+        "random_reference_mse": 3.6363773345947266,
+        "random_posttrained_mse": 3.402698040008545,
+        "learned_reference_mse": 3.524949550628662,
+        "learned_posttrained_mse": 2.9930403232574463,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          2,
+          6
+        ]
+      },
+      {
+        "seed": 200028,
+        "initial_reference_mse": 0.7710909843444824,
+        "initial_posttrained_mse": 1.054183006286621,
+        "random_reference_mse": 1.0352907180786133,
+        "random_posttrained_mse": 1.2589486837387085,
+        "learned_reference_mse": 1.0407109260559082,
+        "learned_posttrained_mse": 1.3567602634429932,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          4,
+          7
+        ]
+      },
+      {
+        "seed": 200029,
+        "initial_reference_mse": 0.3080008029937744,
+        "initial_posttrained_mse": 0.15972600877285004,
+        "random_reference_mse": 0.20475344359874725,
+        "random_posttrained_mse": 0.14664866030216217,
+        "learned_reference_mse": 0.2667393386363983,
+        "learned_posttrained_mse": 0.24004477262496948,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          3,
+          14
+        ]
+      },
+      {
+        "seed": 200030,
+        "initial_reference_mse": 0.3626387119293213,
+        "initial_posttrained_mse": 0.319250226020813,
+        "random_reference_mse": 0.292286217212677,
+        "random_posttrained_mse": 0.24636615812778473,
+        "learned_reference_mse": 0.397195965051651,
+        "learned_posttrained_mse": 0.40610000491142273,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          13,
+          3
+        ]
+      },
+      {
+        "seed": 200031,
+        "initial_reference_mse": 0.17095941305160522,
+        "initial_posttrained_mse": 0.18110428750514984,
+        "random_reference_mse": 0.16116750240325928,
+        "random_posttrained_mse": 0.16827431321144104,
+        "learned_reference_mse": 0.17997458577156067,
+        "learned_posttrained_mse": 0.191664919257164,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          14
+        ]
+      },
+      {
+        "seed": 200032,
+        "initial_reference_mse": 0.2290549874305725,
+        "initial_posttrained_mse": 0.18057109415531158,
+        "random_reference_mse": 0.16834284365177155,
+        "random_posttrained_mse": 0.11350561678409576,
+        "learned_reference_mse": 0.37855860590934753,
+        "learned_posttrained_mse": 0.29707586765289307,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          5,
+          0
+        ]
+      },
+      {
+        "seed": 200033,
+        "initial_reference_mse": 0.06146162748336792,
+        "initial_posttrained_mse": 0.05625054985284805,
+        "random_reference_mse": 0.04550400748848915,
+        "random_posttrained_mse": 0.07677251845598221,
+        "learned_reference_mse": 0.06779684126377106,
+        "learned_posttrained_mse": 0.07743096351623535,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          8,
+          6
+        ]
+      },
+      {
+        "seed": 200034,
+        "initial_reference_mse": 0.3210804760456085,
+        "initial_posttrained_mse": 0.5497431755065918,
+        "random_reference_mse": 0.28224003314971924,
+        "random_posttrained_mse": 0.448800653219223,
+        "learned_reference_mse": 0.5147191286087036,
+        "learned_posttrained_mse": 0.7639105916023254,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          9,
+          2
+        ]
+      },
+      {
+        "seed": 200035,
+        "initial_reference_mse": 0.6080691814422607,
+        "initial_posttrained_mse": 0.7610116600990295,
+        "random_reference_mse": 0.3411577343940735,
+        "random_posttrained_mse": 0.4087318181991577,
+        "learned_reference_mse": 0.3505989611148834,
+        "learned_posttrained_mse": 0.40373435616493225,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          2,
+          12
+        ]
+      },
+      {
+        "seed": 200036,
+        "initial_reference_mse": 0.4678434133529663,
+        "initial_posttrained_mse": 0.2909117043018341,
+        "random_reference_mse": 0.3687770664691925,
+        "random_posttrained_mse": 0.2386481612920761,
+        "learned_reference_mse": 0.3864983320236206,
+        "learned_posttrained_mse": 0.30304184556007385,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          9,
+          10
+        ]
+      },
+      {
+        "seed": 200037,
+        "initial_reference_mse": 0.09970944374799728,
+        "initial_posttrained_mse": 0.15201732516288757,
+        "random_reference_mse": 0.10130439698696136,
+        "random_posttrained_mse": 0.30124109983444214,
+        "learned_reference_mse": 0.047923967242240906,
+        "learned_posttrained_mse": 0.14080342650413513,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          0
+        ]
+      },
+      {
+        "seed": 200038,
+        "initial_reference_mse": 0.31631234288215637,
+        "initial_posttrained_mse": 0.36104971170425415,
+        "random_reference_mse": 0.4067475199699402,
+        "random_posttrained_mse": 0.39623427391052246,
+        "learned_reference_mse": 0.37676429748535156,
+        "learned_posttrained_mse": 0.4056171178817749,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          5,
+          14
+        ]
+      },
+      {
+        "seed": 200039,
+        "initial_reference_mse": 0.4008937478065491,
+        "initial_posttrained_mse": 0.3478851616382599,
+        "random_reference_mse": 0.33188414573669434,
+        "random_posttrained_mse": 0.24664245545864105,
+        "learned_reference_mse": 0.3672127425670624,
+        "learned_posttrained_mse": 0.220709428191185,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          1,
+          14
+        ]
+      },
+      {
+        "seed": 200040,
+        "initial_reference_mse": 0.2565141022205353,
+        "initial_posttrained_mse": 0.31535425782203674,
+        "random_reference_mse": 0.23449067771434784,
+        "random_posttrained_mse": 0.3751806914806366,
+        "learned_reference_mse": 0.215007945895195,
+        "learned_posttrained_mse": 0.34940752387046814,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          8,
+          5
+        ]
+      },
+      {
+        "seed": 200041,
+        "initial_reference_mse": 0.46946558356285095,
+        "initial_posttrained_mse": 0.6158077120780945,
+        "random_reference_mse": 0.2813012897968292,
+        "random_posttrained_mse": 0.41024249792099,
+        "learned_reference_mse": 0.4561917185783386,
+        "learned_posttrained_mse": 0.621658980846405,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          4,
+          3
+        ]
+      },
+      {
+        "seed": 200042,
+        "initial_reference_mse": 0.6351189017295837,
+        "initial_posttrained_mse": 0.5256538391113281,
+        "random_reference_mse": 0.6400120854377747,
+        "random_posttrained_mse": 0.4988185167312622,
+        "learned_reference_mse": 0.6654255986213684,
+        "learned_posttrained_mse": 0.5176589488983154,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          11,
+          13
+        ]
+      },
+      {
+        "seed": 200043,
+        "initial_reference_mse": 0.6418013572692871,
+        "initial_posttrained_mse": 0.5838826298713684,
+        "random_reference_mse": 0.7754601240158081,
+        "random_posttrained_mse": 0.8114006519317627,
+        "learned_reference_mse": 0.4032592475414276,
+        "learned_posttrained_mse": 0.35140448808670044,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          7,
+          10
+        ]
+      },
+      {
+        "seed": 200044,
+        "initial_reference_mse": 0.43230578303337097,
+        "initial_posttrained_mse": 0.2056228667497635,
+        "random_reference_mse": 0.2645852267742157,
+        "random_posttrained_mse": 0.196408212184906,
+        "learned_reference_mse": 0.3045649826526642,
+        "learned_posttrained_mse": 0.19188356399536133,
+        "learned_acquisitions": 1,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          5,
+          16
+        ]
+      },
+      {
+        "seed": 200045,
+        "initial_reference_mse": 0.5185849666595459,
+        "initial_posttrained_mse": 0.512206494808197,
+        "random_reference_mse": 1.7598668336868286,
+        "random_posttrained_mse": 1.3062007427215576,
+        "learned_reference_mse": 1.1126861572265625,
+        "learned_posttrained_mse": 1.0012853145599365,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          10,
+          2
+        ]
+      },
+      {
+        "seed": 200046,
+        "initial_reference_mse": 0.20088352262973785,
+        "initial_posttrained_mse": 0.1980452984571457,
+        "random_reference_mse": 0.18113182485103607,
+        "random_posttrained_mse": 0.1594078540802002,
+        "learned_reference_mse": 0.2691490352153778,
+        "learned_posttrained_mse": 0.3430778384208679,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          2,
+          6
+        ]
+      },
+      {
+        "seed": 200047,
+        "initial_reference_mse": 0.23990947008132935,
+        "initial_posttrained_mse": 0.1975846141576767,
+        "random_reference_mse": 0.25146484375,
+        "random_posttrained_mse": 0.24341577291488647,
+        "learned_reference_mse": 0.30170756578445435,
+        "learned_posttrained_mse": 0.24758584797382355,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          15,
+          9
+        ]
+      },
+      {
+        "seed": 200048,
+        "initial_reference_mse": 0.39328497648239136,
+        "initial_posttrained_mse": 0.2972584664821625,
+        "random_reference_mse": 0.4477718472480774,
+        "random_posttrained_mse": 0.34138211607933044,
+        "learned_reference_mse": 0.5518726706504822,
+        "learned_posttrained_mse": 0.43131399154663086,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          14,
+          4
+        ]
+      },
+      {
+        "seed": 200049,
+        "initial_reference_mse": 0.06446967273950577,
+        "initial_posttrained_mse": 0.022798221558332443,
+        "random_reference_mse": 0.07535409182310104,
+        "random_posttrained_mse": 0.1208779439330101,
+        "learned_reference_mse": 0.12116916477680206,
+        "learned_posttrained_mse": 0.06565478444099426,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          4,
+          6
+        ]
+      },
+      {
+        "seed": 200050,
+        "initial_reference_mse": 0.09748806804418564,
+        "initial_posttrained_mse": 0.3206872045993805,
+        "random_reference_mse": 0.1847105771303177,
+        "random_posttrained_mse": 0.5591859817504883,
+        "learned_reference_mse": 0.08860701322555542,
+        "learned_posttrained_mse": 0.3371730148792267,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          11,
+          14
+        ]
+      },
+      {
+        "seed": 200051,
+        "initial_reference_mse": 0.12413883954286575,
+        "initial_posttrained_mse": 0.11894024163484573,
+        "random_reference_mse": 0.11868207156658173,
+        "random_posttrained_mse": 0.11248034238815308,
+        "learned_reference_mse": 0.1653074324131012,
+        "learned_posttrained_mse": 0.16565802693367004,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          1,
+          3
+        ]
+      },
+      {
+        "seed": 200052,
+        "initial_reference_mse": 0.2638689875602722,
+        "initial_posttrained_mse": 0.22608982026576996,
+        "random_reference_mse": 0.3079206943511963,
+        "random_posttrained_mse": 0.3108990788459778,
+        "learned_reference_mse": 0.21756881475448608,
+        "learned_posttrained_mse": 0.1871766895055771,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          14,
+          6
+        ]
+      },
+      {
+        "seed": 200053,
+        "initial_reference_mse": 0.31994855403900146,
+        "initial_posttrained_mse": 0.4026726186275482,
+        "random_reference_mse": 0.27211618423461914,
+        "random_posttrained_mse": 0.37614548206329346,
+        "learned_reference_mse": 0.15405094623565674,
+        "learned_posttrained_mse": 0.20611914992332458,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          7
+        ]
+      },
+      {
+        "seed": 200054,
+        "initial_reference_mse": 0.5498131513595581,
+        "initial_posttrained_mse": 0.5136318206787109,
+        "random_reference_mse": 0.40238937735557556,
+        "random_posttrained_mse": 0.2949194014072418,
+        "learned_reference_mse": 0.6295038461685181,
+        "learned_posttrained_mse": 0.600670576095581,
+        "learned_acquisitions": 1,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          14,
+          16
+        ]
+      },
+      {
+        "seed": 200055,
+        "initial_reference_mse": 0.15783825516700745,
+        "initial_posttrained_mse": 0.1262493133544922,
+        "random_reference_mse": 0.1632927805185318,
+        "random_posttrained_mse": 0.2037707418203354,
+        "learned_reference_mse": 0.15884406864643097,
+        "learned_posttrained_mse": 0.10743151605129242,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          2,
+          13
+        ]
+      },
+      {
+        "seed": 200056,
+        "initial_reference_mse": 0.04911955073475838,
+        "initial_posttrained_mse": 0.03823531046509743,
+        "random_reference_mse": 0.05400477349758148,
+        "random_posttrained_mse": 0.04678533226251602,
+        "learned_reference_mse": 0.07240740954875946,
+        "learned_posttrained_mse": 0.08363939076662064,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          14,
+          9
+        ]
+      },
+      {
+        "seed": 200057,
+        "initial_reference_mse": 0.0852026492357254,
+        "initial_posttrained_mse": 0.025351200252771378,
+        "random_reference_mse": 0.08691339939832687,
+        "random_posttrained_mse": 0.023499660193920135,
+        "learned_reference_mse": 0.07702475041151047,
+        "learned_posttrained_mse": 0.029256029054522514,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          11
+        ]
+      },
+      {
+        "seed": 200058,
+        "initial_reference_mse": 0.9062221050262451,
+        "initial_posttrained_mse": 0.8507025837898254,
+        "random_reference_mse": 1.1332707405090332,
+        "random_posttrained_mse": 0.9532411098480225,
+        "learned_reference_mse": 1.189645528793335,
+        "learned_posttrained_mse": 0.9710997343063354,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          15,
+          11
+        ]
+      },
+      {
+        "seed": 200059,
+        "initial_reference_mse": 0.09024571627378464,
+        "initial_posttrained_mse": 0.2435349076986313,
+        "random_reference_mse": 0.1609826534986496,
+        "random_posttrained_mse": 0.4546315670013428,
+        "learned_reference_mse": 0.7132397890090942,
+        "learned_posttrained_mse": 0.8698451519012451,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          5,
+          12
+        ]
+      },
+      {
+        "seed": 200060,
+        "initial_reference_mse": 0.18138909339904785,
+        "initial_posttrained_mse": 0.17907974123954773,
+        "random_reference_mse": 0.2047083079814911,
+        "random_posttrained_mse": 0.19066789746284485,
+        "learned_reference_mse": 0.2561967074871063,
+        "learned_posttrained_mse": 0.2559072971343994,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          11,
+          13
+        ]
+      },
+      {
+        "seed": 200061,
+        "initial_reference_mse": 0.48899176716804504,
+        "initial_posttrained_mse": 0.5515882968902588,
+        "random_reference_mse": 0.2563002407550812,
+        "random_posttrained_mse": 0.2705162465572357,
+        "learned_reference_mse": 0.5122313499450684,
+        "learned_posttrained_mse": 0.5862765312194824,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          0,
+          14
+        ]
+      },
+      {
+        "seed": 200062,
+        "initial_reference_mse": 0.21507684886455536,
+        "initial_posttrained_mse": 0.3031693696975708,
+        "random_reference_mse": 0.5437080264091492,
+        "random_posttrained_mse": 0.5519144535064697,
+        "learned_reference_mse": 0.15955248475074768,
+        "learned_posttrained_mse": 0.4030267596244812,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          12,
+          11
+        ]
+      },
+      {
+        "seed": 200063,
+        "initial_reference_mse": 0.4787655174732208,
+        "initial_posttrained_mse": 0.24272219836711884,
+        "random_reference_mse": 0.35612115263938904,
+        "random_posttrained_mse": 0.16377848386764526,
+        "learned_reference_mse": 0.6546494364738464,
+        "learned_posttrained_mse": 0.45091721415519714,
+        "learned_acquisitions": 2,
+        "random_acquisitions": 2,
+        "learned_actions": [
+          2,
+          4
+        ]
+      }
+    ],
+    "model_forward_calls": 511
+  },
+  "model_forward_calls_total": 1824
+}
